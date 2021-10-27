@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2021_10_27_201243) do
   create_table "orders", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.money "total_amount", scale: 2
     t.string "description"
-    t.bigint "customers_id"
+    t.bigint "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customers_id"], name: "index_orders_on_customers_id"
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
 end

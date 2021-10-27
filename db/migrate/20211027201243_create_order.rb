@@ -3,7 +3,7 @@ class CreateOrder < ActiveRecord::Migration[6.1]
     create_table :orders, id: :uuid do |t|
       t.money :total_amount
       t.string :description
-      t.belongs_to :customers
+      t.belongs_to :customer
       t.timestamps
     end
   end
