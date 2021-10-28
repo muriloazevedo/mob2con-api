@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  match '*all', controller: 'application', action: 'cors_preflight_check', via: :options
+
+  scope module: 'api', format: 'json' do
+    namespace :v1 do
+      resources :customers, only: %i[create show index]
+    end
+  end
 end
