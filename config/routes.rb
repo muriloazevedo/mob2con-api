@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   scope module: 'api', format: 'json' do
     namespace :v1 do
       resources :customers, only: %i[create show index]
+      resources :orders, only: %i[create show index]
     end
   end
 end
